@@ -3,4 +3,4 @@
 ## Component Hierarchy
 ![component-heirarchy]
 
-[component-heirarchy]: ./wireframes/component_heirarchy.png
+[component-heirarchy]: ./wireframes/component_hierarchy.png
