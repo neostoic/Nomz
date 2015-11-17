@@ -1,4 +1,4 @@
-# Phase 2: Flux Architecture and Note CRUD (2 days)
+# Phase 2: Flux Architecture, Location Querying, and Filtering (2.5 days)
 
 ## Rails
 ### Models
@@ -9,25 +9,23 @@
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* LocationMap (Location results)
+* LocationIndex
+  - LocationIndexItem
+* LocationFilteringForm
 
 ### Stores
-* Note
+* Location
+* FilterParams
 
 ### Actions
-* ApiActions.receiveAllNotes
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
+* ApiLocationActions.receiveLocations
+* FilterActions.updateFilter
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiLocationUtil.fetchLocations
 
 ## Gems/Libraries
 * Flux Dispatcher
-* Twitter Bootstrap
+* React
+* React Router

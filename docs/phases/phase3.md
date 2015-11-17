@@ -1,39 +1,38 @@
-# Phase 3: Notebooks and Tags (2 days)
+# Phase 3: Location Reviews and Location Show Page (2 days)
 
 ## Rails
 ### Models
-* Notebook
-* Tag
-* Tagging
+* Review
 
 ### Controllers
-* Api::NotebooksController (create, destroy, index, show, update)
+* Api::ReviewsController (create, destroy, index, show, update)
 
 ### Views
-* notebooks/index.json.jbuilder
-* notebooks/show.json.jbuilder
-* tags/show.json.jbuilder
+* reviews/index.json.jbuilder
+* reviews/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* NotebooksIndex
-  - NotebookIndexItem
-* NotebookForm
-* SearchIndex
+* LocationShowPage
+  - LocationMap (Single location)
+  - LocationSummary
+  - ReviewForm
+  - ReviewIndex
+    + ReviewIndexItem
 
 ### Stores
-* Notebook
+* ReviewStore
 
 ### Actions
-* ApiActions.receiveAllNotebooks
-* ApiActions.receiveSingleNotebook
-* ApiActions.deleteNotebook
+* ApiReviewActions.receiveReviews
+* ApiReviewActions.receiveSingleReview
+* ApiReviewActions.deleteReview
 
 ### ApiUtil
-* ApiUtil.fetchAllNotebooks
-* ApiUtil.fetchSingleNotebook
-* ApiUtil.createNotebook
-* ApiUtil.editNotebook
-* ApiUtil.destroyNotebook
+* ApiReviewUtil.fetchReviews
+* ApiReviewUtil.createReview
+* ApiReviewUtil.editReview
+* ApiReviewUtil.destroyReview
 
 ## Gems/Libraries
+* Cloudinary

@@ -1,32 +1,44 @@
 # Schema Information
 
-## notes
+## users
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+username        | string    | not null
+password_digest | text      | not null
+
+
+## locations
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
+type        | integer   | not null
 title       | string    | not null
-body        | text      | not null
-author_id   | integer   | not null, foreign key (references users), indexed
-notebook_id | integer   | not null, foreign key (references notebooks), indexed
-archived    | boolean   | not null, default: false
+description | text      | not null
+address     | string    | not null
+city        | string    | not null
+state       | string    | not null, limit 2
+zipcode     | integer   | not null, limit 5
 
-## notebooks
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-description | string    | 
 
-## reminders
+## reviews
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-note_id     | string    | not null, foreign key (references notes), indexed
+location_id | integer   | not null, foreign key (references locations), indexed
+tag_ids     | integer[] |
+body        | text      | not null
 date        | datetime  | not null
-type        | string    | not null
-prev_id     | integer   | foreign key (references reminders), indexed
+
+## comments
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+user_id         | integer   | not null, foreign key (references users), indexed
+review_id       | integer   | not null, foreign key (references reviews), indexed
+body            | string    | not null
+date            | datetime  | not null
 
 ## tags
 column name | data type | details
@@ -38,14 +50,12 @@ name        | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
 tag_id      | integer   | not null, foreign key (references tags), indexed
+review_id   | integer   | not null, foreign key (references reviews), indexed, unique [tag_id]
 
-## users
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-username        | string    | not null, indexed, unique
-password_digest | string    | not null
-session_token   | string    | not null, indexed, unique
+## followings
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+follower_id | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
+followee_id | integer   | not null, foreign key (references tags), indexed
