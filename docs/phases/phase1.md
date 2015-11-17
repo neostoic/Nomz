@@ -27,3 +27,4 @@
 
 ## Gems/Libraries
 * BCrypt
+* Faker

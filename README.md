@@ -34,7 +34,7 @@ and React.js. Nomz allows users to:
 
 ### Phase 1: User Authentication, Location Model and JSON API (2 days)
 
-In Phase 1, I will begin by implementing user signup and authentication (using BCrypt). The app will default the user as a guest user. There will be a navigation bar at the top of each page that will contain a location type and a location search bar. In addition, guests will see a sign-up option that will allow he/she to create a user. A login button will also be available if the guest user already has a login. Finally, a "remember me" function will allow the user to visit the site without having to log back in. If the user is already logged in, the login button will be replaced with a logout button.
+In Phase 1, I will begin by implementing user signup and authentication (using BCrypt). There will be a navigation bar at the top of each page that will contain a location type and a location search bar. In addition, guests will see a sign-up option that will allow he/she to create a user. A login button will also be available if the guest user already has a login. Finally, a "remember me" function will allow the user to visit the site without having to log back in. If the user is already logged in, the login button will be replaced with a logout button. Users not logged in will be able to conduct searches but they will not be able to use most of the site's functionality (commenting, creating reviews, etc).
 
 The location model will contain all relevant data elements a user would be concerned with when searching for a location. I will be using the Faker gem to seed the database with locations to search from. I will also be using Jbuilder to create views that the JSON API will render when sending responses back to the client.
 
