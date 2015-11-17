@@ -19,6 +19,9 @@ address     | string    | not null
 city        | string    | not null
 state       | string    | not null, limit 2
 zipcode     | integer   | not null, limit 5
+phone_number| string    | not null
+website     | string    | not null
+price_range | integer   | not null, limit 1
 
 
 ## reviews
@@ -54,8 +57,8 @@ tag_id      | integer   | not null, foreign key (references tags), indexed
 review_id   | integer   | not null, foreign key (references reviews), indexed, unique [tag_id]
 
 ## followings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-follower_id | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
-followee_id | integer   | not null, foreign key (references tags), indexed
+column name      | data type | details
+-----------------|-----------|-----------------------
+id               | integer   | not null, primary key
+follower_user_id | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
+followee_user_id | integer   | not null, foreign key (references tags), indexed

@@ -9,14 +9,18 @@
 
 ## Flux
 ### Views (React Components)
+* NavigationBar
+  - LocationTypeSearchBar
+  - LocationCityStateSearchBar
 * LocationMap (Location results)
+* LocationFilteringForm
 * LocationIndex
   - LocationIndexItem
-* LocationFilteringForm
 
 ### Stores
-* Location
-* FilterParams
+* LocationStore
+* FilterParamStore
+* MarkerStore
 
 ### Actions
 * ApiLocationActions.receiveLocations
